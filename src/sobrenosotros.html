@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="shortcut icon" href="../src/img/88965.png" type="image/x-icon">
+    <title>Zoológico del Carmen</title>
+    <!-- Vincular Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        .about-us-section {
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .team-card {
+            margin-bottom: 20px;
+        }
+
+        .team-card img {
+            border-radius: 50%;
+            max-width: 100px;
+        }
+
+        .team-card-body {
+            background-color: #f8f9fa;
+        }
+
+        .team-card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .team-card-text {
+            color: #555;
+        }
+
+        .api-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .section-title {
+            color: #006400;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .section-subtitle {
+            color: #006400;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+      <!-- Barra de navegación -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-success" style="font-family: 'Roboto', sans-serif;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Zoológico del Carmen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="talleres-educativos.html">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Animales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Actividades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Visítanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contáctanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Donaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Sección de Sobre Nosotros -->
+    <div class="container about-us-section">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p>El <strong>Zoológico del Carmen</strong> es una institución dedicada a la conservación y educación ambiental. Nuestro propósito es ofrecer una experiencia única para los visitantes, permitiéndoles conocer y respetar la biodiversidad del mundo animal.</p>
+                <p>Con un equipo altamente calificado de biólogos, veterinarios, educadores y voluntarios, trabajamos incansablemente para mantener un ambiente natural y saludable para nuestros animales, y brindar a la comunidad un espacio de aprendizaje y recreación.</p>
+                
+                <h4 class="section-subtitle">Nuestra Misión</h4>
+                <p>Promover la conservación de especies animales y su hábitat a través de programas educativos, investigaciones científicas y el cuidado de la fauna en un entorno seguro y accesible para todos.</p>
+                
+                <h4 class="section-subtitle">Nuestra Visión</h4>
+                <p>Ser un referente de conservación y educación ambiental en la región, creando conciencia sobre la importancia de la biodiversidad y fomentando un respeto mutuo entre los seres humanos y la fauna silvestre.</p>
+
+                <h4 class="section-subtitle">Nuestros Valores</h4>
+                <ul>
+                    <li><strong>Compromiso:</strong> Trabajamos con pasión por la preservación de la vida silvestre.</li>
+                    <li><strong>Educación:</strong> Buscamos inspirar y educar a las futuras generaciones sobre la importancia de la fauna y el medio ambiente.</li>
+                    <li><strong>Innovación:</strong> Estamos siempre en busca de nuevas formas de cuidar, proteger y educar sobre los animales.</li>
+                    <li><strong>Respeto:</strong> Valoramos la diversidad y promovemos el respeto por todas las especies vivas.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4 class="section-subtitle">Conoce a Nuestro Equipo</h4>
+                <!-- API de muestra: Obtener datos de un miembro del equipo -->
+                <div id="team-member" class="api-info">
+                    <h5 class="section-subtitle">Miembros Clave del Zoológico:</h5>
+                    <div id="team-card" class="team-card">
+                        <img id="team-img" src="" alt="Miembro del equipo" class="img-fluid">
+                        <div class="team-card-body">
+                            <h5 id="team-name" class="team-card-title">Nombre del Miembro</h5>
+                            <p id="team-role" class="team-card-text">Rol del Miembro</p>
+                            <p id="team-email" class="team-card-text">Email: <span></span></p>
+                            <p id="team-description" class="team-card-text">Descripción: <span></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+        <p>&copy; 2025 Zoológico del Carmen. Todos los derechos reservados.</p>
+        <p>Visítanos en nuestras redes sociales:</p>
+        <a href="#" class="text-white me-2">Facebook</a>
+        <a href="#" class="text-white me-2">Instagram</a>
+        <a href="#" class="text-white">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap y API -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // API gratuita para obtener información de un miembro del equipo
+        fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then(data => {
+                const member = data.results[0];
+                
+                // Insertar datos del miembro del equipo en el HTML
+                document.getElementById('team-img').src = member.picture.large;
+                document.getElementById('team-name').innerText = `${member.name.first} ${member.name.last}`;
+                document.getElementById('team-role').innerText = 'Biólogo';
+                document.getElementById('team-email').innerHTML = `Email: <a href="mailto:${member.email}">${member.email}</a>`;
+                document.getElementById('team-description').innerHTML = `Descripción: Experto en biología de fauna silvestre y conservación.`;
+            })
+            .catch(error => console.log('Error al obtener datos del equipo:', error));
+    </script>
+</body>
+</html>

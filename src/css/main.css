@@ -162,7 +162,7 @@ h1, h2, h3, h4 {
 
 /* Estilo del título con imagen de fondo */
 .alimentacion-titulo {
-  background-image: url('../src/img/elefantes_bebiendo_agua.jpg');
+  background-image: url('../img/elefantes_bebiendo_agua.jpg');
   background-size: cover;
   background-position: center;
   padding: 15px;
