@@ -1,171 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safari Guiado</title>
-  <!-- Importar fuentes y estilos -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* Estilos Globales */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f3f7f0;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      font-weight: 700;
-    }
-
-    /* Hero Section con Video de Fondo */
-    .hero-section {
-      position: relative;
-      overflow: hidden;
-      height: 50vh;
-    }
-
-    .hero-section video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .hero-section h1 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      position: relative;
-      z-index: 1;
-    }
-
-    .container {
-      padding-top: 40px;
-    }
-
-    .card {
-      border: none;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-img-top {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      background-color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .card-body h5 {
-      font-size: 1.25rem;
-      color: #333;
-    }
-
-    .card-body p {
-      color: #666;
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 25px;
-      text-align: center;
-      color: #007bff;
-    }
-
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-      border-radius: 25px;
-      padding: 12px 30px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #004085;
-    }
-
-    .content-section {
-      padding: 40px;
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin-top: 30px;
-    }
-
-    .content-section h4 {
-      font-size: 1.75rem;
-      margin-bottom: 20px;
-    }
-
-    .content-section p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    /* Estilos para la barra de navegación */
-    .navbar {
-      background-color: #28a745; /* Verde más suave */
-    }
-
-    .navbar a {
-      color: white;
-      font-weight: bold;
-    }
-
-    .navbar a:hover {
-      color: #f8f9fa !important;
-      background-color: #28a745 !important;
-      border-radius: 5px;
-    }
-
-    /* Efecto de transición suave */
-    .nav-link {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Estilo del logo */
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.8rem;
-    }
-
-    /* Personalizar el color del texto en dispositivos móviles */
-    .navbar-toggler-icon {
-      background-color: #ffffff; /* Cambiar color del icono del menú en móvil */
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="shortcut icon" href="../src/img/88965.png" type="image/x-icon">
+    <title>Safari Guiado</title>
+    <!-- Vincular Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-     <!-- Barra de navegación -->
+ <!-- Barra de navegación -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-success" style="font-family: 'Roboto', sans-serif;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Zoológico del Carmen</a>
@@ -174,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Animales</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Actividades</a></li>
@@ -190,15 +37,14 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero Section con Video -->
-  <div class="hero-section">
+   <!-- Hero Section con Video -->
+    <div class="hero-section">
     <video autoplay loop muted>
-      <source src="Safari - Adventure African Background Music (Travel Background Music).mp4" type="video/mp4">
+      <source src="../src/img/Safari - Adventure African Background Music (Travel Background Music).mp4" type="video/mp4">
       Tu navegador no soporta el formato de video.
     </video>
     <h1>Safari Guiado</h1>
-  </div>
+  </div>  
 
   <div class="container">
     <!-- Información de Safari Guiado -->
@@ -223,7 +69,7 @@
         <h5>Ubicación:</h5>
         <p>Zoológico Carmen, Área de Safari</p>
 
-        <a href="actividades.html" class="btn btn-primary">Regresar a actividades</a>
+        <a href="index.html" class="btn btn-primary">Regresar a actividades</a>
       </div>
     </div>
   </div>
@@ -232,6 +78,5 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
