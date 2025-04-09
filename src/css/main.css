@@ -154,3 +154,19 @@ h1, h2, h3, h4 {
 .navbar-toggler-icon {
   background-color: #ffffff; /* Cambiar color del icono del menú en móvil */
 }
+
+/* Estilo de la sección de Alimentación de Animales */
+.alimentacion {
+  padding: 40px;
+}
+
+/* Estilo del título con imagen de fondo */
+.alimentacion-titulo {
+  background-image: url('../src/img/elefantes_bebiendo_agua.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
