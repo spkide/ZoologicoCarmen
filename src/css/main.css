@@ -1,0 +1,32 @@
+body {
+    background-color: #f3f7f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Cambiar color de hover de los enlaces */
+  .nav-link:hover {
+    color: #f8f9fa !important;
+    background-color: #28a745 !important;
+    border-radius: 5px;
+  }
+
+  /* Efecto de transición suave */
+  .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Estilo del logo */
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  /* Fondo personalizado para la navbar */
+  .navbar {
+    background-color: #28a745; /* Verde más suave */
+  }
+
+  /* Personalizar el color del texto en dispositivos móviles */
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* Cambiar color del icono del menú en móvil */
+  }
