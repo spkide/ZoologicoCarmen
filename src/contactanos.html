@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="shortcut icon" href="../src/img/88965.png" type="image/x-icon">
-    <title>Safari Guiado</title>
+    <title>Contactanos</title>
     <!-- Vincular Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,56 +37,43 @@
               </div>
             </div>
           </nav>  
-   <!-- Hero Section con Video -->
-    <div class="hero-section">
-    <video autoplay loop muted>
-      <source src="../src/img/Safari - Adventure African Background Music (Travel Background Music).mp4" type="video/mp4">
-      Tu navegador no soporta el formato de video.
-    </video>
-    <h1>Safari Guiado</h1>
-  </div>  
+ <!-- CONTACTANOS -->
+<section class="mb-5" id="contacto">
+  <h2 class="text-center mb-4">📬 Contáctanos</h2>
+  <form action="https://formsubmit.co/tucorreo@gmail.com" method="POST" class="row g-3">
+    
+    <!-- Opciones ocultas -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+    <input type="hidden" name="_template" value="table">
 
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="name" required>
+    </div>
+    <div class="col-md-6">
+      <label for="correo" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" name="email" required>
+    </div>
+    <div class="col-12">
+      <label for="mensaje" class="form-label">Mensaje</label>
+      <textarea class="form-control" id="mensaje" name="message" rows="4" required></textarea>
+    </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</section>
+<footer class="bg-dark text-white text-center py-4">
   <div class="container">
-    <!-- Información de Safari Guiado -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <img src="img/zoologico-de-chapultepec-cumple-100-anos-5-actividades-para-celebrarlo-ok-123953.jpg" class="card-img-top" alt="Safari Guiado">
-          <div class="card-body">
-            <h5 class="card-title">Explora la Fauna</h5>
-            <p class="card-text">Únete a un safari guiado y vive la experiencia de cerca con nuestros animales. Durante el recorrido, nuestros guías expertos te contarán todo sobre los animales, su comportamiento y cómo cuidarlos.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 content-section">
-        <h4 class="section-title">Descripción:</h4>
-        <p>Únete a un safari guiado y vive la experiencia de cerca con nuestros animales. Durante el recorrido, nuestros guías expertos te contarán todo sobre los animales, su comportamiento y cómo cuidarlos. Es una experiencia única para aprender sobre la fauna y la conservación del medio ambiente.</p>
-
-        <h5>Fecha y Hora:</h5>
-        <p>De 9:00 AM a 11:00 AM</p>
-
-        <h5>Ubicación:</h5>
-        <p>Zoológico Carmen, Área de Safari</p>
-
-        <a href="index.html" class="btn btn-primary">Regresar a actividades</a>
-      </div>
-    </div>
+  <p>&copy; 2025 Zoológico del Carmen. Todos los derechos reservados.</p>
+  <p>Visítanos en nuestras redes sociales:</p>
+  <a href="#" class="text-white me-2">Facebook</a>
+  <a href="#" class="text-white me-2">Instagram</a>
+  <a href="#" class="text-white">Twitter</a>
   </div>
-
-  <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-      <p>&copy; 2025 Zoológico del Carmen. Todos los derechos reservados.</p>
-      <p>Visítanos en nuestras redes sociales:</p>
-      <a href="#" class="text-white me-2">Facebook</a>
-      <a href="#" class="text-white me-2">Instagram</a>
-      <a href="#" class="text-white">Twitter</a>
-    </div>
-  </footer>
-
-  <!-- Scripts de Bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</footer>
+<!-- Scripts de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
